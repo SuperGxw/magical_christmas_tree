@@ -11,8 +11,9 @@ export default class VisionService {
   }
 
   async initialize() {
+    // 确保 WASM 路径与 package.json 中的版本一致
     const vision = await FilesetResolver.forVisionTasks(
-      "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/wasm"
+      "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.13/wasm"
     );
     this.handLandmarker = await HandLandmarker.createFromOptions(vision, {
       baseOptions: {
@@ -63,8 +64,8 @@ export default class VisionService {
         x: palmCenter.x,
         y: palmCenter.y,
         pinch: pinchDist < 0.05,
-        fist: avgDist < 0.22, // Adjusted for mobile proximity
-        open: avgDist > 0.38  // Adjusted for mobile proximity
+        fist: avgDist < 0.22, 
+        open: avgDist > 0.38  
       };
     }
     return null;
