@@ -1,0 +1,8 @@
+
+{
+  "name": "Magical Holiday Christmas Tree",
+  "description": "A high-end 3D Christmas experience featuring interactive particle systems, gesture control via MediaPipe, and a customizable memory photo wall.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>圣诞魔法 - 互动3D贺卡</title>
+    <meta name="description" content="一个由 AI 驱动的 3D 互动圣诞体验，支持手势识别与回忆照片墙。">
+    <!-- Open Graph for WeChat/Social -->
+    <meta property="og:title" content="Merry Christmas - 圣诞魔法">
+    <meta property="og:description" content="开启相机，用手势控制你的专属粒子圣诞树。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            color: #fceea7;
+            font-family: 'Playfair Display', serif;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+        h1 { font-family: 'Cinzel', serif; }
+        .gold-gradient-text {
+            background: linear-gradient(to bottom, #ffffff 0%, #d4af37 50%, #aa891c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-button {
+            background: rgba(212, 175, 55, 0.08);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        .glass-button:active { transform: scale(0.95); background: rgba(212, 175, 55, 0.2); }
+        #loader-spinner {
+            width: 50px; height: 50px;
+            border: 2px solid rgba(212, 175, 55, 0.1);
+            border-top: 2px solid #d4af37;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .ui-hidden { opacity: 0; pointer-events: none; transform: translateY(10px); }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "three": "https://esm.sh/three@^0.182.0",
+    "three/": "https://esm.sh/three@^0.182.0/",
+    "@mediapipe/tasks-vision": "https://esm.sh/@mediapipe/tasks-vision@^0.10.22-rc.20250304",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
